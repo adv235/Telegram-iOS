@@ -1418,6 +1418,7 @@ open class ListView: ASDisplayNode, UIScrollViewAccessibilityDelegate, UIGesture
     public func stopScrolling() {
         let wasIgnoringScrollingEvents = self.ignoreScrollingEvents
         self.ignoreScrollingEvents = true
+        
         self.scroller.setContentOffset(self.scroller.contentOffset, animated: false)
         self.ignoreScrollingEvents = wasIgnoringScrollingEvents
     }

@@ -143,7 +143,7 @@ public final class ChatListNavigationBar: Component {
         }
     }
     
-    public static let searchScrollHeight: CGFloat = 52.0
+    public static let searchScrollHeight: CGFloat = 0.0
     public static let storiesScrollHeight: CGFloat = {
         return 83.0
     }()
@@ -219,7 +219,12 @@ public final class ChatListNavigationBar: Component {
             }
         }
         
-        public func applyScroll(offset: CGFloat, allowAvatarsExpansion: Bool, forceUpdate: Bool = false, transition: Transition) {
+        public func applyScroll(offset: CGFloat, allowAvatarsExpansion: Bool, forceUpdate: Bool = false, pullToArchiveAvailable: Bool = false, transition: Transition) {
+            var offset = offset
+            if pullToArchiveAvailable && !allowAvatarsExpansion {
+                offset = .zero
+            }
+            
             let transition = transition
             
             self.rawScrollOffset = offset

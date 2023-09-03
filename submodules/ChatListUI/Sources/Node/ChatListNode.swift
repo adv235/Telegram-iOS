@@ -2896,6 +2896,8 @@ public final class ChatListNode: ListView {
         }
         var isHiddenItemVisible = false
         self.forEachItemNode({ itemNode in
+            guard !isHiddenItemVisible else { return }
+            
             if let itemNode = itemNode as? ChatListItemNode, let item = itemNode.item {
                 if case let .peer(peerData) = item.content, let threadInfo = peerData.threadInfo {
                     if threadInfo.isHidden {

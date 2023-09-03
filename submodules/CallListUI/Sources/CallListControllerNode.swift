@@ -621,6 +621,7 @@ final class CallListControllerNode: ASDisplayNode {
                 }
             }
             
+            self.listNode.tempTopInset = -75.0
             self.listNode.visibleContentOffsetChanged = { [weak self] offset in
                 if let strongSelf = self {
                     var previousContentOffsetValue: CGFloat?

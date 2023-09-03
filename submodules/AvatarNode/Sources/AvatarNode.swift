@@ -92,7 +92,8 @@ private func calculateColors(explicitColorIndex: Int?, peerId: EnginePeer.Id?, i
         } else if case let .archivedChatsIcon(hiddenByDefault) = icon, let theme = theme {
             let backgroundColors: (UIColor, UIColor)
             if hiddenByDefault {
-                backgroundColors = theme.chatList.unpinnedArchiveAvatarColor.backgroundColors.colors
+                backgroundColors = (UIColor(rgb: 0x00affe), UIColor(rgb: 0x007fff))
+//                theme.chatList.unpinnedArchiveAvatarColor.backgroundColors.colors
             } else {
                 backgroundColors = theme.chatList.pinnedArchiveAvatarColor.backgroundColors.colors
             }

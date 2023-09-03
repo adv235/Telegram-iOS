@@ -2692,10 +2692,7 @@ class ChatListItemNode: ItemListRevealOptionsItemNode {
             let rawContentRect = CGRect(origin: CGPoint(x: 2.0, y: layoutOffset + floor(item.presentationData.fontSize.itemListBaseFontSize * 8.0 / 17.0)), size: CGSize(width: rawContentWidth, height: itemHeight - 12.0 - 9.0))
             
             let insets = ChatListItemNode.insets(first: first, last: last, firstWithHeader: firstWithHeader)
-            var heightOffset: CGFloat = 0.0
-            if item.hiddenOffset {
-                heightOffset = -itemHeight
-            }
+            let heightOffset: CGFloat = 0.0
             let layout = ListViewItemNodeLayout(contentSize: CGSize(width: params.width, height: max(0.0, itemHeight + heightOffset)), insets: insets)
             
             var customActions: [ChatListItemAccessibilityCustomAction] = []
